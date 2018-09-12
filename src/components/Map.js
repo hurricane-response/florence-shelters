@@ -43,8 +43,8 @@ class Lmap extends Component {
     )
   }
 
-  componentWillUpdate(nextProps) {
-    if (nextProps.filteredMarkers.length == this.props.filteredMarkers.length) {
+  componentDidUpdate(prevProps) {
+    if (prevProps.filteredMarkers.length == this.props.filteredMarkers.length) {
       return;
     }
 
