@@ -43,13 +43,13 @@ class Lmap extends Component {
     )
   }
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.filteredMarkers.length == this.props.filteredMarkers.length) {
+  componentWillUpdate(nextProps) {
+    if (nextProps.filteredMarkers.length == this.props.filteredMarkers.length) {
       return;
     }
 
-    if (this.props.filteredMarkers.length > 0) {
-      const markers = this.props.filteredMarkers.map((marker, index) => {
+    if (nextProps.filteredMarkers.length > 0) {
+      const markers = nextProps.filteredMarkers.map((marker, index) => {
         const {
           county,
           shelter,
@@ -145,7 +145,7 @@ class Lmap extends Component {
 
         <TileLayer
           url='https://api.mapbox.com/styles/v1/jnolasco/cj75zemih4wc02srs353jlu05/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoiam5vbGFzY28iLCJhIjoiY2oyYmVwNXViMDB1NjJxbXB2aHFlZnAzZyJ9.dY4H7Hzre0GJOeHBrkzIpg'
-          attribution='Supported by <a target="_blank" href="https://www.mapbox.com/humanitarian/">Mapbox</a> and <a href="https://www.openstreetmap.org/" target="_blank">OSM</a> | <a href="mailto:jason@irmashelters.org">Contact Us</a>'
+          attribution='Supported by <a target="_blank" href="https://www.mapbox.com/humanitarian/">Mapbox</a> and <a href="https://www.openstreetmap.org/" target="_blank">OSM</a> | <a href="mailto:jason@orchidflux.com">Contact Us</a>'
         />
 
         <ZoomControl position='bottomright'/>

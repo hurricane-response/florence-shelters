@@ -23,8 +23,8 @@ class Shelters extends Component {
     tempFilteredMarkers: [],
     viewport: config.map,
     currentLocation: [],
-    selectedFilter: 'Accepting People',
-    tempSelectedFilter: 'Accepting People',
+    selectedFilter: 'All Shelters',
+    tempSelectedFilter: 'All Shelters',
     selectedMarker: {},
     toggledInfo: false,
     toggledPanel: false,
@@ -35,6 +35,7 @@ class Shelters extends Component {
 
   async componentDidMount() {
     const shelterData = await SheltersApi.getAll();
+    console.log(shelterData);
     const allMarkerData = shelterData.shelters
       .filter(shelters => shelters.latitude)
       .map((shelters) => {
@@ -95,7 +96,7 @@ class Shelters extends Component {
         showModal: false
       })
     } else {
-      const initialMarkers = allMarkerData.filter(m => m.supplyNeeds || m.volunteerNeeds)
+      const initialMarkers = allMarkerData.filter(m =>  true) // manually set this to initial filter
       this.setState({
         filteredMarkers: initialMarkers,
         tempFilteredMarkers: initialMarkers

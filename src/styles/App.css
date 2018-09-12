@@ -1547,3 +1547,29 @@ h4 {
 
     background:#999 !important;
 }
+
+.marker-cluster-small {
+    border-radius:20px;
+}
+
+.marker-cluster-small div {
+    border-radius:20px;
+    height:75%;
+    width:75%;
+    margin:10%;
+    text-align:center;
+    padding-top:5px;
+}
+
+.marker-cluster-medium {
+
+}
+
+.marker-cluster-medium div {
+
+    height:80%;
+    width:80%;
+    margin:10%;
+    text-align:center;
+    padding-top:20%;
+}
