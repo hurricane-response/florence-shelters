@@ -8,7 +8,6 @@ import FacebookProvider, { Comments } from 'react-facebook';
 import config from '../config';
 
 const InfoBox = (props) => {
-
     const { selectedMarker, toggledInfo, query } = props;
     let {
         id,
