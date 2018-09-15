@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import L from 'leaflet';
-import {Map, TileLayer, CircleMarker, ZoomControl} from 'react-leaflet';
+import {Map, TileLayer, CircleMarker, ZoomControl, GeoJSON} from 'react-leaflet';
 import MarkerClusterGroup from 'react-leaflet-markercluster';
 
 import blueMarker from '../images/shelter-blue.png';
@@ -44,11 +44,16 @@ class Lmap extends Component {
   }
 
   componentWillUpdate(nextProps) {
-    if (nextProps.filteredMarkers.length == this.props.filteredMarkers.length) {
-      return;
+    /* update evac */
+    if (nextProps.ncjson.features.length != this.props.ncjson.features.length) {
+
     }
 
-    if (nextProps.filteredMarkers.length > 0) {
+    /* update markers */
+    if (nextProps.filteredMarkers.length == this.props.filteredMarkers.length) {
+      // do nothing
+    }
+    else if (nextProps.filteredMarkers.length > 0) {
       const markers = nextProps.filteredMarkers.map((marker, index) => {
         const {
           county,
@@ -75,14 +80,16 @@ class Lmap extends Component {
           }
         })
       })
-
       // Temp fix
       const newMarkers = markers.length > 0 ? markers : [null]
-
       this.setState({
         markers: newMarkers
       })
     }
+
+    /* update evac routes */
+
+
   }
 
   centerToMarker = (location) => {
@@ -114,8 +121,12 @@ class Lmap extends Component {
       onClosePanel,
       onCloseSearchBox,
       onClearCounties,
-      updateUrlParams
+      updateUrlParams,
+      ncjson,
+      scjson
     } = this.props;
+
+    console.log(this.props.ncjson);
 
     const markerClusterOptions = {
       showCoverageOnHover: false,
@@ -151,6 +162,8 @@ class Lmap extends Component {
         <ZoomControl position='bottomright'/>
         {currentLocation.length > 0 ? <CircleMarker center={currentLocation} radius={15}/> : ''}
 
+        <GeoJSON key={`nc_${ncjson.features.length}`} data={ncjson} style={this.getStyle} />
+        <GeoJSON key={`sc_${scjson.features.length}`} data={scjson} style={this.getStyle} />
 
         <MarkerClusterGroup
           markers={markers}
@@ -170,6 +183,10 @@ class Lmap extends Component {
       </Map>
     )
   }
+
+
 }
+
+
 
 export default Lmap

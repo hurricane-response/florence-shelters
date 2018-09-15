@@ -15,3 +15,11 @@ export const getNeeds = () =>
 export const search = (query) =>
   fetch(`${config.api.baseURL}/?${query}`)
     .then(res => res.json())
+
+export const getEvacNC = () =>
+  fetch(`https://s3.amazonaws.com/florenceshelters/evac_nc.json`)
+    .then(res => res.json())
+
+export const getEvacSC = () =>
+  fetch(`https://s3.amazonaws.com/florenceshelters/evac_sc.json`)
+    .then(res => res.json())

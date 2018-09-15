@@ -30,12 +30,22 @@ class Shelters extends Component {
     toggledPanel: false,
     toggledSearchBox: false,
     query: '',
-    countyBounds: []
+    countyBounds: [],
+    ncjson: {"type":"FeatureCollection", "features": []},
+    scjson: {"type":"FeatureCollection", "features": []}
   }
 
   async componentDidMount() {
+    const evacNc = await SheltersApi.getEvacNC();
+    const evacSc = await SheltersApi.getEvacSC();
+
+    this.setState({
+      ncjson: evacNc,
+      scjson: evacSc
+    })
+
+
     const shelterData = await SheltersApi.getAll();
-    console.log(shelterData);
     const allMarkerData = shelterData.shelters
       .filter(shelters => shelters.latitude)
       .map((shelters) => {
@@ -256,7 +266,9 @@ class Shelters extends Component {
       toggledPanel,
       toggledSearchBox,
       query,
-      countyBounds
+      countyBounds,
+      ncjson,
+      scjson
     } = this.state;
     return (
       <div>
@@ -357,6 +369,9 @@ class Shelters extends Component {
 
           countyBounds={countyBounds}
           onClearCounties={this.clearCounties}
+
+          ncjson={ncjson}
+          scjson={scjson}
         />
 
         <InfoBox
