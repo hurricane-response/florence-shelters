@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ecb08cd5-cf5c-48fe-a49f-0024760b16fe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/components/Map.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Map.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Shelters.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Shelters.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/SheltersApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/SheltersApi.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +60,7 @@
           <entry key="Procfile" value="6" />
           <entry key="css" value="233" />
           <entry key="html" value="23" />
-          <entry key="js" value="2174" />
+          <entry key="js" value="2221" />
           <entry key="local" value="49" />
         </counts>
       </usages-collector>
@@ -70,7 +68,7 @@
         <counts>
           <entry key="CSS" value="233" />
           <entry key="HTML" value="23" />
-          <entry key="JavaScript" value="2174" />
+          <entry key="JavaScript" value="2221" />
           <entry key="PLAIN_TEXT" value="55" />
         </counts>
       </usages-collector>
@@ -99,8 +97,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Map.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="165" column="68" selection-start-line="165" selection-start-column="68" selection-end-line="165" selection-end-column="68" />
+            <state relative-caret-position="365">
+              <caret line="114" column="18" selection-start-line="114" selection-start-column="18" selection-end-line="114" selection-end-column="18" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -209,6 +207,7 @@
       <find>api</find>
       <find>props</find>
       <find>getA</find>
+      <find>getStyle</find>
     </findStrings>
     <dirStrings>
       <dir>E:\_Work\Clients\FlorenceShelters\src</dir>
@@ -347,12 +346,12 @@
       <option name="presentableId" value="Default" />
       <updated>1536743469736</updated>
       <workItem from="1536743471489" duration="11394000" />
-      <workItem from="1537034346443" duration="4639000" />
+      <workItem from="1537034346443" duration="4982000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16033000" />
+    <option name="totallyTimeSpent" value="16376000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="711" y="159" width="1454" height="1255" extended-state="0" />
@@ -524,8 +523,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Map.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="165" column="68" selection-start-line="165" selection-start-column="68" selection-end-line="165" selection-end-column="68" />
+        <state relative-caret-position="365">
+          <caret line="114" column="18" selection-start-line="114" selection-start-column="18" selection-end-line="114" selection-end-column="18" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>

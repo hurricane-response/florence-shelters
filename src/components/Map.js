@@ -108,6 +108,14 @@ class Lmap extends Component {
     }
   }
 
+  getStyle() {
+    return ({
+      "color": "#53c04c",
+      "weight": 3,
+      "opacity": 1
+    });
+  }
+
   render() {
     let {center, markers} = this.state;
     const {
